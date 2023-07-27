@@ -29,21 +29,23 @@ class Shop:
         """
         self.products.append(nuevo_producto)
 
-    def vender_producto(self: object, id: int) -> None:
+    def vender_producto(self: object, id: object) -> None:
         """
             Elimina un producto de la lista de productos.
         """
-        print(self.products[id])
-        self.products.pop(id)
+        for product in self.products:
+            if product.uuid == id:
+                self.products.pop(self.products.index(product))
+                break
 
     def inflacion(self: object, porcentaje_aumento: float) -> None:
         """
             Aumenta el precio de todos los productos
         """
         for product in self.products:
-            product.print_info()
+            # product.print_info()
             product.price += (product.price * porcentaje_aumento) / 100
-            product.print_info()
+            # product.print_info()
 
     def hacer_liquidacion(self: object, categoria: str, porcentaje_descuento: float) -> None:
         """
@@ -51,6 +53,6 @@ class Shop:
         """
         for product in self.products:
             if product.category == categoria:
-                product.print_info()
-            product.price -= (product.price * porcentaje_descuento) / 100
-            product.print_info()
+                # product.print_info()
+                product.price -= (product.price * porcentaje_descuento) / 100
+                # product.print_info()

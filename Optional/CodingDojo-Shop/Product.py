@@ -1,3 +1,4 @@
+import uuid
 class Product:
     """ 
     Atributos:
@@ -16,6 +17,7 @@ class Product:
         self.name = name
         self.price = price
         self.category = category
+        self.uuid = uuid.uuid4()
 
     def actualizar_precio(self, cambio_porcentaje, esta_elevado) -> None:
         """ Si <esta_elevado> es True, el precio se incrementa en cambio_porcentaje,
@@ -27,4 +29,4 @@ class Product:
 
     def print_info(self) -> None:
         """ Imprime los atributos del objeto """
-        print(self.name, self.price, self.category)
+        print(self.name, self.price, self.category, self.uuid)

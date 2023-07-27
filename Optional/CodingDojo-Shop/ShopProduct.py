@@ -23,3 +23,4 @@ GoodStore = Shop.Shop("Good Store", [apple, banana, orange, tangerine,
 GoodStore.agregar_producto(cheese)
 GoodStore.inflacion(10)
 GoodStore.hacer_liquidacion("Fruit",10)
+GoodStore.vender_producto(cheese.uuid)
